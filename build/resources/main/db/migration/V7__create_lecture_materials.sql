@@ -1,0 +1,13 @@
+CREATE TABLE lecture_materials (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    course_id BIGINT NOT NULL,
+    lecturer_id BIGINT NOT NULL,
+    title VARCHAR(150) NOT NULL,
+    description TEXT,
+    file_url VARCHAR(255) NOT NULL,
+    original_file_name VARCHAR(255) NOT NULL,
+    file_type VARCHAR(50) NOT NULL,
+    file_size BIGINT NOT NULL,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);

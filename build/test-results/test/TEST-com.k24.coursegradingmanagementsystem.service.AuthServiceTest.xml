@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.k24.coursegradingmanagementsystem.service.AuthServiceTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-06-27T11:20:11.406Z" hostname="DESKTOP-A9UBGPQ" time="0.28">
+  <properties/>
+  <testcase name="registerStudent_shouldCreateStudent_whenRequestIsValid()" classname="com.k24.coursegradingmanagementsystem.service.AuthServiceTest" time="0.272"/>
+  <testcase name="registerStudent_shouldThrowConflictException_whenEmailExists()" classname="com.k24.coursegradingmanagementsystem.service.AuthServiceTest" time="0.007"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

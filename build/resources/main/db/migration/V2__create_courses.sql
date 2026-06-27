@@ -1,0 +1,14 @@
+CREATE TABLE courses (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    course_code VARCHAR(30) NOT NULL UNIQUE,
+    course_name VARCHAR(150) NOT NULL,
+    description TEXT,
+    credit INT NOT NULL,
+    lecturer_id BIGINT,
+    maximum_students INT NOT NULL,
+    start_date DATE NOT NULL,
+    end_date DATE NOT NULL,
+    status VARCHAR(30) NOT NULL DEFAULT 'DRAFT',
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);

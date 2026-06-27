@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.k24.coursegradingmanagementsystem.service.EnrollmentServiceTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-06-27T11:20:11.852Z" hostname="DESKTOP-A9UBGPQ" time="0.02">
+  <properties/>
+  <testcase name="enrollCourse_shouldCreateEnrollment_whenCourseIsAvailable()" classname="com.k24.coursegradingmanagementsystem.service.EnrollmentServiceTest" time="0.012"/>
+  <testcase name="enrollCourse_shouldThrowConflictException_whenAlreadyEnrolled()" classname="com.k24.coursegradingmanagementsystem.service.EnrollmentServiceTest" time="0.007"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

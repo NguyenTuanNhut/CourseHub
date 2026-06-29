@@ -69,6 +69,7 @@ public class AuthServiceTest {
         // Given
         when(userRepository.existsByUsername(validRequest.getUsername())).thenReturn(false);
         when(userRepository.existsByEmail(validRequest.getEmail())).thenReturn(false);
+        when(userRepository.existsByPhone(validRequest.getPhone())).thenReturn(false);
         when(passwordEncoder.encode(validRequest.getPassword())).thenReturn("encodedPassword");
 
         User savedUser = User.builder()
@@ -100,6 +101,18 @@ public class AuthServiceTest {
         // Given
         when(userRepository.existsByUsername(validRequest.getUsername())).thenReturn(false);
         when(userRepository.existsByEmail(validRequest.getEmail())).thenReturn(true);
+
+        // When & Then
+        assertThrows(ConflictException.class, () -> authService.registerStudent(validRequest));
+        verify(userRepository, never()).save(any(User.class));
+    }
+
+    @Test
+    void registerStudent_shouldThrowConflictException_whenPhoneExists() {
+        // Given
+        when(userRepository.existsByUsername(validRequest.getUsername())).thenReturn(false);
+        when(userRepository.existsByEmail(validRequest.getEmail())).thenReturn(false);
+        when(userRepository.existsByPhone(validRequest.getPhone())).thenReturn(true);
 
         // When & Then
         assertThrows(ConflictException.class, () -> authService.registerStudent(validRequest));

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.k24.coursegradingmanagementsystem.controller.StudentCourseControllerTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-06-27T11:20:10.665Z" hostname="DESKTOP-A9UBGPQ" time="0.728">
+<testsuite name="com.k24.coursegradingmanagementsystem.controller.StudentCourseControllerTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-06-28T09:45:16.215Z" hostname="DESKTOP-A9UBGPQ" time="2.471">
   <properties/>
-  <testcase name="enrollCourse_shouldReturn409_whenAlreadyEnrolled()" classname="com.k24.coursegradingmanagementsystem.controller.StudentCourseControllerTest" time="0.02"/>
-  <testcase name="enrollCourse_shouldReturn201_whenSuccessful()" classname="com.k24.coursegradingmanagementsystem.controller.StudentCourseControllerTest" time="0.018"/>
-  <testcase name="studentApi_shouldReturn401_whenTokenIsMissing()" classname="com.k24.coursegradingmanagementsystem.controller.StudentCourseControllerTest" time="0.01"/>
-  <system-out><![CDATA[2026-06-27T18:20:10.668+07:00  INFO 10644 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.k24.coursegradingmanagementsystem.controller.StudentCourseControllerTest]: StudentCourseControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2026-06-27T18:20:10.699+07:00  INFO 10644 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.k24.coursegradingmanagementsystem.CourseGradingManagementSystemApplication for test class com.k24.coursegradingmanagementsystem.controller.StudentCourseControllerTest
+  <testcase name="enrollCourse_shouldReturn409_whenAlreadyEnrolled()" classname="com.k24.coursegradingmanagementsystem.controller.StudentCourseControllerTest" time="0.058"/>
+  <testcase name="enrollCourse_shouldReturn201_whenSuccessful()" classname="com.k24.coursegradingmanagementsystem.controller.StudentCourseControllerTest" time="0.078"/>
+  <testcase name="studentApi_shouldReturn401_whenTokenIsMissing()" classname="com.k24.coursegradingmanagementsystem.controller.StudentCourseControllerTest" time="0.019"/>
+  <system-out><![CDATA[2026-06-28T16:45:16.229+07:00  INFO 22080 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.k24.coursegradingmanagementsystem.controller.StudentCourseControllerTest]: StudentCourseControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-06-28T16:45:16.267+07:00  INFO 22080 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.k24.coursegradingmanagementsystem.CourseGradingManagementSystemApplication for test class com.k24.coursegradingmanagementsystem.controller.StudentCourseControllerTest
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -16,13 +16,13 @@
 
  :: Spring Boot ::                (v3.4.2)
 
-2026-06-27T18:20:10.769+07:00  INFO 10644 --- [    Test worker] c.k.c.c.StudentCourseControllerTest      : Starting StudentCourseControllerTest using Java 17.0.12 with PID 10644 (started by nhutn in D:\CourseHub)
-2026-06-27T18:20:10.769+07:00  INFO 10644 --- [    Test worker] c.k.c.c.StudentCourseControllerTest      : No active profile set, falling back to 1 default profile: "default"
-2026-06-27T18:20:11.183+07:00  INFO 10644 --- [    Test worker] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name com.k24.coursegradingmanagementsystem.security.CustomUserDetailsService#0
-2026-06-27T18:20:11.323+07:00  INFO 10644 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2026-06-27T18:20:11.324+07:00  INFO 10644 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2026-06-27T18:20:11.325+07:00  INFO 10644 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
-2026-06-27T18:20:11.336+07:00  INFO 10644 --- [    Test worker] c.k.c.c.StudentCourseControllerTest      : Started StudentCourseControllerTest in 0.627 seconds (process running for 8.462)
+2026-06-28T16:45:16.426+07:00  INFO 22080 --- [    Test worker] c.k.c.c.StudentCourseControllerTest      : Starting StudentCourseControllerTest using Java 17.0.12 with PID 22080 (started by nhutn in D:\CourseHub)
+2026-06-28T16:45:16.427+07:00  INFO 22080 --- [    Test worker] c.k.c.c.StudentCourseControllerTest      : No active profile set, falling back to 1 default profile: "default"
+2026-06-28T16:45:17.593+07:00  INFO 22080 --- [    Test worker] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name com.k24.coursegradingmanagementsystem.security.CustomUserDetailsService#0
+2026-06-28T16:45:18.470+07:00  INFO 22080 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-06-28T16:45:18.475+07:00  INFO 22080 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-06-28T16:45:18.476+07:00  INFO 22080 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-06-28T16:45:18.517+07:00  INFO 22080 --- [    Test worker] c.k.c.c.StudentCourseControllerTest      : Started StudentCourseControllerTest in 2.217 seconds (process running for 21.193)
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

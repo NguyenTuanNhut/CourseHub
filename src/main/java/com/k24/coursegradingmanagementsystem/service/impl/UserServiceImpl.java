@@ -36,6 +36,9 @@ public class UserServiceImpl implements UserService {
         if (userRepository.existsByEmail(request.getEmail())) {
             throw new ConflictException("Email is already registered");
         }
+        if (request.getPhone() != null && !request.getPhone().isBlank() && userRepository.existsByPhone(request.getPhone())) {
+            throw new ConflictException("Phone number is already registered");
+        }
 
         User user = User.builder()
                 .username(request.getUsername())
@@ -54,6 +57,14 @@ public class UserServiceImpl implements UserService {
     public UserResponse updateUser(Long userId, UpdateUserRequest request) {
         User user = userRepository.findById(userId)
                 .orElseThrow(() -> new ResourceNotFoundException("User not found with id: " + userId));
+
+        if (request.getPhone() != null && !request.getPhone().isBlank()) {
+            userRepository.findByPhone(request.getPhone()).ifPresent(existingUser -> {
+                if (!existingUser.getId().equals(userId)) {
+                    throw new ConflictException("Phone number is already registered");
+                }
+            });
+        }
 
         user.setFullName(request.getFullName());
         user.setPhone(request.getPhone());

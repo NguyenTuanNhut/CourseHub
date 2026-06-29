@@ -205,6 +205,9 @@ public class AuthServiceImpl implements AuthService {
         if (userRepository.existsByEmail(request.getEmail())) {
             throw new ConflictException("Email is already registered");
         }
+        if (request.getPhone() != null && !request.getPhone().isBlank() && userRepository.existsByPhone(request.getPhone())) {
+            throw new ConflictException("Phone number is already registered");
+        }
 
         User user = User.builder()
                 .username(request.getUsername())

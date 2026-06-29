@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.k24.coursegradingmanagementsystem.service.CourseServiceTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-06-27T11:20:11.691Z" hostname="DESKTOP-A9UBGPQ" time="0.157">
+<testsuite name="com.k24.coursegradingmanagementsystem.service.CourseServiceTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-06-28T09:45:19.182Z" hostname="DESKTOP-A9UBGPQ" time="0.51">
   <properties/>
-  <testcase name="deleteCourse_shouldThrowBusinessRuleException_whenActiveEnrollmentsExist()" classname="com.k24.coursegradingmanagementsystem.service.CourseServiceTest" time="0.152"/>
-  <testcase name="deleteCourse_shouldDelete_whenNoActiveEnrollments()" classname="com.k24.coursegradingmanagementsystem.service.CourseServiceTest" time="0.004"/>
+  <testcase name="deleteCourse_shouldThrowBusinessRuleException_whenActiveEnrollmentsExist()" classname="com.k24.coursegradingmanagementsystem.service.CourseServiceTest" time="0.488"/>
+  <testcase name="deleteCourse_shouldDelete_whenNoActiveEnrollments()" classname="com.k24.coursegradingmanagementsystem.service.CourseServiceTest" time="0.007"/>
+  <testcase name="assignLecturer_shouldUpdateLecturerId_andKeepOtherData()" classname="com.k24.coursegradingmanagementsystem.service.CourseServiceTest" time="0.01"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

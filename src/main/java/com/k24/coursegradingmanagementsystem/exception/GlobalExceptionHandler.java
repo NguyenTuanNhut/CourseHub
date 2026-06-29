@@ -5,6 +5,8 @@ import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.AccessDeniedException;
+import org.springframework.security.core.AuthenticationException;
+import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -41,10 +43,15 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler({
             InvalidTokenException.class,
-            TokenRevokedException.class
+            TokenRevokedException.class,
+            AuthenticationException.class
     })
     public ResponseEntity<ApiErrorResponse> handleUnauthorized(RuntimeException ex, HttpServletRequest request) {
-        return buildErrorResponse(HttpStatus.UNAUTHORIZED, "Unauthorized", ex.getMessage(), request, null);
+        String message = ex.getMessage();
+        if (ex instanceof BadCredentialsException) {
+            message = "Incorrect username or password";
+        }
+        return buildErrorResponse(HttpStatus.UNAUTHORIZED, "Unauthorized", message, request, null);
     }
 
     @ExceptionHandler({

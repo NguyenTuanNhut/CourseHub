@@ -4,8 +4,11 @@ import com.k24.coursegradingmanagementsystem.entity.Course;
 import com.k24.coursegradingmanagementsystem.enums.CourseStatus;
 import com.k24.coursegradingmanagementsystem.enums.EnrollmentStatus;
 import com.k24.coursegradingmanagementsystem.exception.BusinessRuleException;
+import com.k24.coursegradingmanagementsystem.entity.User;
+import com.k24.coursegradingmanagementsystem.enums.Role;
 import com.k24.coursegradingmanagementsystem.repository.CourseRepository;
 import com.k24.coursegradingmanagementsystem.repository.EnrollmentRepository;
+import com.k24.coursegradingmanagementsystem.repository.UserRepository;
 import com.k24.coursegradingmanagementsystem.service.impl.CourseServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -28,6 +31,9 @@ public class CourseServiceTest {
 
     @Mock
     private EnrollmentRepository enrollmentRepository;
+
+    @Mock
+    private UserRepository userRepository;
 
     @InjectMocks
     private CourseServiceImpl courseService;
@@ -70,5 +76,31 @@ public class CourseServiceTest {
         BusinessRuleException exception = assertThrows(BusinessRuleException.class, () -> courseService.deleteCourse(1L));
         assertTrue(exception.getMessage().contains("Cannot delete course: Students are already enrolled"));
         verify(courseRepository, never()).delete(any(Course.class));
+    }
+
+    @Test
+    void assignLecturer_shouldUpdateLecturerId_andKeepOtherData() {
+        // Given
+        User lecturer = User.builder()
+                .id(2L)
+                .username("lecturer01")
+                .role(Role.LECTURER)
+                .isActive(true)
+                .build();
+        
+        when(courseRepository.findById(1L)).thenReturn(Optional.of(course));
+        when(userRepository.findById(2L)).thenReturn(Optional.of(lecturer));
+
+        // When
+        courseService.assignLecturer(1L, 2L);
+
+        // Then
+        assertEquals(2L, course.getLecturerId());
+        // Verify other fields are not lost
+        assertEquals("JAVA101", course.getCourseCode());
+        assertEquals("Lap Trinh Java Co Ban", course.getCourseName());
+        assertEquals(40, course.getMaximumStudents());
+        
+        verify(courseRepository, times(1)).save(course);
     }
 }
